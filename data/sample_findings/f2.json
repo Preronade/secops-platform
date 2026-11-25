@@ -1,0 +1,7 @@
+{
+  "id": "f2",
+  "type": "Recon:EC2/Portscan",
+  "severity": 2.0,
+  "title": "Single port probe on test instance",
+  "description": "One TCP connection attempt to port 8080 from 203.0.113.5 on an isolated test instance. No further activity."
+}

@@ -1,0 +1,178 @@
+{
+  "name": "soar-triage",
+  "nodes": [
+    {
+      "parameters": {
+        "httpMethod": "POST",
+        "path": "finding",
+        "options": {}
+      },
+      "type": "n8n-nodes-base.webhook",
+      "typeVersion": 2.2,
+      "position": [
+        0,
+        0
+      ],
+      "id": "dfd7039a-a6c1-4e98-afc5-614650be1505",
+      "name": "Webhook",
+      "webhookId": "be73e53f-030d-4b55-8f4f-5bc0d1a86ba4"
+    },
+    {
+      "parameters": {
+        "method": "POST",
+        "url": "http://ollama:11434/api/generate",
+        "sendBody": true,
+        "specifyBody": "json",
+        "jsonBody": "={{ { model: \"llama3.2:3b\", stream: false, format: \"json\", prompt: \"You are a SOC analyst. Classify this alert. Return ONLY JSON with keys severity (HIGH, MEDIUM or LOW), reason (one sentence), action (block_ip, open_ticket or ignore). Alert: \" + $json.body.title + \". \" + $json.body.description } }}",
+        "options": {
+          "timeout": 300000
+        }
+      },
+      "type": "n8n-nodes-base.httpRequest",
+      "typeVersion": 4.5,
+      "position": [
+        224,
+        0
+      ],
+      "id": "0b7b650c-0b75-4a93-baac-cb6ec21357b7",
+      "name": "HTTP Request"
+    },
+    {
+      "parameters": {
+        "jsCode": "const raw = $input.first().json.response;\nlet r;\ntry {\n  r = JSON.parse(raw);\n} catch (e) {\n  r = { severity: \"MEDIUM\", reason: \"AI output could not be parsed\", action: \"open_ticket\" };\n}\nconst f = $('Webhook').first().json.body;\n\nreturn [{\n  json: {\n    id: f.id,\n    title: f.title,\n    description: f.description,\n    severity: String(r.severity || \"MEDIUM\").toUpperCase(),\n    reason: r.reason || \"\",\n    action: r.action || \"\"\n  }\n}];"
+      },
+      "type": "n8n-nodes-base.code",
+      "typeVersion": 2,
+      "position": [
+        448,
+        0
+      ],
+      "id": "af708ecf-bddd-44f7-a5a4-1cf981974f20",
+      "name": "Code in JavaScript"
+    },
+    {
+      "parameters": {
+        "conditions": {
+          "options": {
+            "caseSensitive": true,
+            "leftValue": "",
+            "typeValidation": "loose",
+            "version": 4
+          },
+          "conditions": [
+            {
+              "id": "fb965f6a-9438-45e3-b69b-a17423a41ce2",
+              "leftValue": "={{ $json.severity }}",
+              "rightValue": "HIGH",
+              "operator": {
+                "type": "string",
+                "operation": "equals",
+                "name": "filter.operator.equals"
+              }
+            }
+          ],
+          "combinator": "and"
+        },
+        "looseTypeValidation": true,
+        "options": {}
+      },
+      "type": "n8n-nodes-base.if",
+      "typeVersion": 2.4,
+      "position": [
+        672,
+        0
+      ],
+      "id": "42d522ac-a33f-4db8-8831-1d8dff1ef2ba",
+      "name": "If"
+    },
+    {
+      "parameters": {},
+      "type": "n8n-nodes-base.noOp",
+      "typeVersion": 1,
+      "position": [
+        896,
+        -96
+      ],
+      "id": "10b7054f-cad0-4bef-b462-ee9ef4869924",
+      "name": "HIGH"
+    },
+    {
+      "parameters": {},
+      "type": "n8n-nodes-base.noOp",
+      "typeVersion": 1,
+      "position": [
+        896,
+        96
+      ],
+      "id": "052032bf-8e61-424e-bf0e-474f259a7d2d",
+      "name": "Other path"
+    }
+  ],
+  "pinData": {},
+  "connections": {
+    "Webhook": {
+      "main": [
+        [
+          {
+            "node": "HTTP Request",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "HTTP Request": {
+      "main": [
+        [
+          {
+            "node": "Code in JavaScript",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Code in JavaScript": {
+      "main": [
+        [
+          {
+            "node": "If",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "If": {
+      "main": [
+        [
+          {
+            "node": "HIGH",
+            "type": "main",
+            "index": 0
+          }
+        ],
+        [
+          {
+            "node": "Other path",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    }
+  },
+  "active": false,
+  "settings": {
+    "executionOrder": "v1",
+    "binaryMode": "separate",
+    "availableInMCP": true
+  },
+  "versionId": "643e3612-a838-43ba-a627-88676296c770",
+  "meta": {
+    "instanceId": "88d17d505ef85d86563e90bc2dbc896d2187d474c1ee917cf0b6bb010658b0b4"
+  },
+  "nodeGroups": [],
+  "id": "K1Ed4zNKZfG4j7IR",
+  "tags": []
+}

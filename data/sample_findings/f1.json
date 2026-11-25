@@ -1,0 +1,8 @@
+{
+  "id": "f1",
+  "type": "UnauthorizedAccess:EC2/SSHBruteForce",
+  "severity": 5.0,
+  "title": "SSH brute force attempts against i-0abc123",
+  "description": "198.51.100.23 made 340 failed SSH logins in 10 minutes against instance i-0abc123.",
+  "resource": {"instanceId": "i-0abc123", "region": "ap-south-1"}
+}

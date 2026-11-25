@@ -131,6 +131,40 @@
           "name": "Telegram account"
         }
       }
+    },
+    {
+      "parameters": {
+        "project": {
+          "__rl": true,
+          "value": "10001",
+          "mode": "list",
+          "cachedResultName": "SecOps"
+        },
+        "issueType": {
+          "__rl": true,
+          "value": "10008",
+          "mode": "list",
+          "cachedResultName": "Task"
+        },
+        "summary": "=[{{ $('Code in JavaScript').item.json.severity }}] {{ $('Code in JavaScript').item.json.title }}",
+        "additionalFields": {
+          "description": "={{ $('Code in JavaScript').item.json.reason }}"
+        }
+      },
+      "type": "n8n-nodes-base.jira",
+      "typeVersion": 1,
+      "position": [
+        1120,
+        -96
+      ],
+      "id": "4cebe5dd-8909-4653-9211-d5e42b555248",
+      "name": "Create an issue",
+      "credentials": {
+        "jiraSoftwareCloudApi": {
+          "id": "qmz6YY1Xy0vb9H2F",
+          "name": "Jira SW Cloud account"
+        }
+      }
     }
   ],
   "pinData": {},
@@ -190,6 +224,17 @@
       "main": [
         [
           {
+            "node": "Create an issue",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Create an issue": {
+      "main": [
+        [
+          {
             "node": "Send a text message",
             "type": "main",
             "index": 0
@@ -204,7 +249,7 @@
     "binaryMode": "separate",
     "availableInMCP": true
   },
-  "versionId": "ba898d1e-7624-430f-a57e-eb16cc8b1832",
+  "versionId": "af851b53-46c0-4756-8921-baa40949cff9",
   "meta": {
     "templateCredsSetupCompleted": true,
     "instanceId": "88d17d505ef85d86563e90bc2dbc896d2187d474c1ee917cf0b6bb010658b0b4"

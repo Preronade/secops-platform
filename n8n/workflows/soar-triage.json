@@ -119,7 +119,7 @@
       "type": "n8n-nodes-base.telegram",
       "typeVersion": 1.2,
       "position": [
-        1120,
+        1344,
         -96
       ],
       "id": "44490c7b-91fa-4226-a068-4c455862da55",
@@ -204,7 +204,7 @@
     "binaryMode": "separate",
     "availableInMCP": true
   },
-  "versionId": "8f2f92c9-d103-491a-a3f9-7d9721f5b7f4",
+  "versionId": "ba898d1e-7624-430f-a57e-eb16cc8b1832",
   "meta": {
     "templateCredsSetupCompleted": true,
     "instanceId": "88d17d505ef85d86563e90bc2dbc896d2187d474c1ee917cf0b6bb010658b0b4"

@@ -36,7 +36,7 @@ def run_case(case):
 
 
 def main():
-    cases = json.loads((HERE / "payloads.json").read_text())
+    cases = json.loads((HERE / os.getenv("PAYLOADS", "payloads.json")).read_text())
     only = set(sys.argv[1:])
     if only:
         cases = [c for c in cases if c["id"] in only]

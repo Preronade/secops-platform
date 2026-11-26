@@ -1,7 +1,8 @@
 from fastapi import FastAPI
 from pydantic import BaseModel, Field
 
-from rag.chain import ask
+from rag.chain import ask, CANARY
+from sanitizer import is_suspicious, leaks_secret
 
 app = FastAPI(title="SecOps Assistant")
 
@@ -17,4 +18,9 @@ def health():
 
 @app.post("/ask")
 def ask_endpoint(req: AskRequest):
-    return ask(req.question)
+    if is_suspicious(req.question):
+        return {"answer": "Request blocked by input filter.", "sources": [], "blocked": True}
+    result = ask(req.question)
+    if leaks_secret(result["answer"], CANARY):
+        return {"answer": "Response withheld by output filter.", "sources": [], "blocked": True}
+    return result

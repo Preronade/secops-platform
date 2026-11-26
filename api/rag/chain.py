@@ -35,4 +35,5 @@ def ask(question: str) -> dict:
     return {
         "answer": reply.content,
         "sources": sorted({d.metadata["source"] for d in docs}),
+        "_context": context,
     }

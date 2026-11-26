@@ -1,0 +1,105 @@
+{
+  "label": "weak",
+  "target": "http://localhost:9090",
+  "time": "2026-11-26T08:00:26.603802+00:00",
+  "findings": [
+    {
+      "id": "scan-1",
+      "type": "ActuatorExposure",
+      "severity": "HIGH",
+      "title": "Environment properties exposed (may include credentials): /actuator/env",
+      "description": "GET /actuator/env returned HTTP 200 without authentication on http://localhost:9090."
+    },
+    {
+      "id": "scan-2",
+      "type": "ActuatorExposure",
+      "severity": "HIGH",
+      "title": "Heap dump downloadable (memory can hold secrets): /actuator/heapdump",
+      "description": "GET /actuator/heapdump returned HTTP 200 without authentication on http://localhost:9090."
+    },
+    {
+      "id": "scan-3",
+      "type": "ActuatorExposure",
+      "severity": "HIGH",
+      "title": "Configuration properties exposed: /actuator/configprops",
+      "description": "GET /actuator/configprops returned HTTP 200 without authentication on http://localhost:9090."
+    },
+    {
+      "id": "scan-4",
+      "type": "ActuatorExposure",
+      "severity": "HIGH",
+      "title": "Recent HTTP requests exposed (headers, cookies): /actuator/httptrace",
+      "description": "GET /actuator/httptrace returned HTTP 200 without authentication on http://localhost:9090."
+    },
+    {
+      "id": "scan-5",
+      "type": "ActuatorExposure",
+      "severity": "MEDIUM",
+      "title": "Thread dump exposed (internal details): /actuator/threaddump",
+      "description": "GET /actuator/threaddump returned HTTP 200 without authentication on http://localhost:9090."
+    },
+    {
+      "id": "scan-6",
+      "type": "ActuatorExposure",
+      "severity": "MEDIUM",
+      "title": "Full endpoint map exposed: /actuator/mappings",
+      "description": "GET /actuator/mappings returned HTTP 200 without authentication on http://localhost:9090."
+    },
+    {
+      "id": "scan-7",
+      "type": "ActuatorExposure",
+      "severity": "MEDIUM",
+      "title": "Application beans exposed: /actuator/beans",
+      "description": "GET /actuator/beans returned HTTP 200 without authentication on http://localhost:9090."
+    },
+    {
+      "id": "scan-8",
+      "type": "ActuatorExposure",
+      "severity": "MEDIUM",
+      "title": "Logger levels readable and possibly changeable: /actuator/loggers",
+      "description": "GET /actuator/loggers returned HTTP 200 without authentication on http://localhost:9090."
+    },
+    {
+      "id": "scan-10",
+      "type": "MissingHeader",
+      "severity": "MEDIUM",
+      "title": "No Content-Security-Policy header",
+      "description": "Content-Security-Policy is missing on http://localhost:9090/."
+    },
+    {
+      "id": "scan-11",
+      "type": "MissingHeader",
+      "severity": "MEDIUM",
+      "title": "No X-Frame-Options header (clickjacking)",
+      "description": "X-Frame-Options is missing on http://localhost:9090/."
+    },
+    {
+      "id": "scan-9",
+      "type": "ActuatorExposure",
+      "severity": "LOW",
+      "title": "Metrics exposed: /actuator/metrics",
+      "description": "GET /actuator/metrics returned HTTP 200 without authentication on http://localhost:9090."
+    },
+    {
+      "id": "scan-12",
+      "type": "MissingHeader",
+      "severity": "LOW",
+      "title": "No X-Content-Type-Options header",
+      "description": "X-Content-Type-Options is missing on http://localhost:9090/."
+    },
+    {
+      "id": "scan-13",
+      "type": "MissingHeader",
+      "severity": "LOW",
+      "title": "No Referrer-Policy header",
+      "description": "Referrer-Policy is missing on http://localhost:9090/."
+    },
+    {
+      "id": "scan-14",
+      "type": "InfoLeak",
+      "severity": "LOW",
+      "title": "Technology disclosed in X-Powered-By",
+      "description": "X-Powered-By: Spring Boot 2.5.0 (demo)"
+    }
+  ]
+}

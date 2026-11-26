@@ -1,0 +1,6 @@
+{
+  "label": "hardened",
+  "target": "http://localhost:9090",
+  "time": "2026-11-26T08:01:16.684778+00:00",
+  "findings": []
+}

@@ -1,0 +1,93 @@
+[
+  {
+    "id": "iac-2",
+    "type": "IaCMisconfiguration",
+    "severity": "HIGH",
+    "title": "Ensure no security groups allow ingress from 0.0.0.0:0 to port 22 [aws_security_group.ssh_open]",
+    "description": "CKV_AWS_24 failed for aws_security_group.ssh_open in /main.tf lines 10-20."
+  },
+  {
+    "id": "iac-8",
+    "type": "IaCMisconfiguration",
+    "severity": "HIGH",
+    "title": "Ensure that S3 bucket has a Public Access block [aws_s3_bucket.logs]",
+    "description": "CKV2_AWS_6 failed for aws_s3_bucket.logs in /main.tf lines 5-8."
+  },
+  {
+    "id": "iac-12",
+    "type": "IaCMisconfiguration",
+    "severity": "HIGH",
+    "title": "S3 Bucket has an ACL defined which allows public READ access. [aws_s3_bucket.logs]",
+    "description": "CKV_AWS_20 failed for aws_s3_bucket.logs in /main.tf lines 5-8."
+  },
+  {
+    "id": "iac-3",
+    "type": "IaCMisconfiguration",
+    "severity": "MEDIUM",
+    "title": "Ensure EBS Volume is encrypted by KMS using a customer managed Key (CMK) [aws_ebs_volume.data]",
+    "description": "CKV_AWS_189 failed for aws_ebs_volume.data in /main.tf lines 22-26."
+  },
+  {
+    "id": "iac-4",
+    "type": "IaCMisconfiguration",
+    "severity": "MEDIUM",
+    "title": "Ensure all data stored in the EBS is securely encrypted [aws_ebs_volume.data]",
+    "description": "CKV_AWS_3 failed for aws_ebs_volume.data in /main.tf lines 22-26."
+  },
+  {
+    "id": "iac-6",
+    "type": "IaCMisconfiguration",
+    "severity": "MEDIUM",
+    "title": "Ensure the S3 bucket has access logging enabled [aws_s3_bucket.logs]",
+    "description": "CKV_AWS_18 failed for aws_s3_bucket.logs in /main.tf lines 5-8."
+  },
+  {
+    "id": "iac-10",
+    "type": "IaCMisconfiguration",
+    "severity": "MEDIUM",
+    "title": "Ensure that S3 buckets are encrypted with KMS by default [aws_s3_bucket.logs]",
+    "description": "CKV_AWS_145 failed for aws_s3_bucket.logs in /main.tf lines 5-8."
+  },
+  {
+    "id": "iac-13",
+    "type": "IaCMisconfiguration",
+    "severity": "MEDIUM",
+    "title": "Ensure all data stored in the S3 bucket have versioning enabled [aws_s3_bucket.logs]",
+    "description": "CKV_AWS_21 failed for aws_s3_bucket.logs in /main.tf lines 5-8."
+  },
+  {
+    "id": "iac-1",
+    "type": "IaCMisconfiguration",
+    "severity": "LOW",
+    "title": "Ensure every security group and rule has a description [aws_security_group.ssh_open]",
+    "description": "CKV_AWS_23 failed for aws_security_group.ssh_open in /main.tf lines 10-20."
+  },
+  {
+    "id": "iac-5",
+    "type": "IaCMisconfiguration",
+    "severity": "LOW",
+    "title": "Ensure S3 buckets should have event notifications enabled [aws_s3_bucket.logs]",
+    "description": "CKV2_AWS_62 failed for aws_s3_bucket.logs in /main.tf lines 5-8."
+  },
+  {
+    "id": "iac-7",
+    "type": "IaCMisconfiguration",
+    "severity": "LOW",
+    "title": "Ensure that an S3 bucket has a lifecycle configuration [aws_s3_bucket.logs]",
+    "description": "CKV2_AWS_61 failed for aws_s3_bucket.logs in /main.tf lines 5-8."
+  },
+  {
+    "id": "iac-9",
+    "type": "IaCMisconfiguration",
+    "severity": "LOW",
+    "title": "Ensure that Security Groups are attached to another resource [aws_security_group.ssh_open]",
+    "description": "CKV2_AWS_5 failed for aws_security_group.ssh_open in /main.tf lines 10-20."
+  },
+  {
+    "id": "iac-11",
+    "type": "IaCMisconfiguration",
+    "severity": "LOW",
+    "title": "Ensure that S3 bucket has cross-region replication enabled [aws_s3_bucket.logs]",
+    "description": "CKV_AWS_144 failed for aws_s3_bucket.logs in /main.tf lines 5-8."
+  }
+]

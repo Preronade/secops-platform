@@ -1,0 +1,207 @@
+{
+  "api": "http://localhost:8001",
+  "model": "standard",
+  "eps": 0.2,
+  "rows": [
+    {
+      "idx": 0,
+      "kind": "clean",
+      "true": 7,
+      "api_label": 7,
+      "api_flag": false,
+      "confidence": 0.9998,
+      "offline_label": 7,
+      "offline_flag": false
+    },
+    {
+      "idx": 0,
+      "kind": "adv",
+      "true": 7,
+      "api_label": 3,
+      "api_flag": true,
+      "confidence": 0.8749,
+      "offline_label": 3,
+      "offline_flag": true
+    },
+    {
+      "idx": 1,
+      "kind": "clean",
+      "true": 2,
+      "api_label": 2,
+      "api_flag": false,
+      "confidence": 0.9999,
+      "offline_label": 2,
+      "offline_flag": false
+    },
+    {
+      "idx": 1,
+      "kind": "adv",
+      "true": 2,
+      "api_label": 0,
+      "api_flag": true,
+      "confidence": 0.8583,
+      "offline_label": 0,
+      "offline_flag": true
+    },
+    {
+      "idx": 2,
+      "kind": "clean",
+      "true": 1,
+      "api_label": 1,
+      "api_flag": false,
+      "confidence": 0.9961,
+      "offline_label": 1,
+      "offline_flag": false
+    },
+    {
+      "idx": 2,
+      "kind": "adv",
+      "true": 1,
+      "api_label": 6,
+      "api_flag": true,
+      "confidence": 0.9625,
+      "offline_label": 6,
+      "offline_flag": true
+    },
+    {
+      "idx": 4,
+      "kind": "clean",
+      "true": 4,
+      "api_label": 4,
+      "api_flag": false,
+      "confidence": 0.999,
+      "offline_label": 4,
+      "offline_flag": false
+    },
+    {
+      "idx": 4,
+      "kind": "adv",
+      "true": 4,
+      "api_label": 9,
+      "api_flag": true,
+      "confidence": 0.9776,
+      "offline_label": 9,
+      "offline_flag": true
+    },
+    {
+      "idx": 5,
+      "kind": "clean",
+      "true": 1,
+      "api_label": 1,
+      "api_flag": false,
+      "confidence": 0.9989,
+      "offline_label": 1,
+      "offline_flag": false
+    },
+    {
+      "idx": 5,
+      "kind": "adv",
+      "true": 1,
+      "api_label": 4,
+      "api_flag": true,
+      "confidence": 0.5665,
+      "offline_label": 4,
+      "offline_flag": true
+    },
+    {
+      "idx": 6,
+      "kind": "clean",
+      "true": 4,
+      "api_label": 4,
+      "api_flag": false,
+      "confidence": 0.9843,
+      "offline_label": 4,
+      "offline_flag": false
+    },
+    {
+      "idx": 6,
+      "kind": "adv",
+      "true": 4,
+      "api_label": 8,
+      "api_flag": false,
+      "confidence": 0.997,
+      "offline_label": 8,
+      "offline_flag": false
+    },
+    {
+      "idx": 7,
+      "kind": "clean",
+      "true": 9,
+      "api_label": 9,
+      "api_flag": false,
+      "confidence": 0.9387,
+      "offline_label": 9,
+      "offline_flag": false
+    },
+    {
+      "idx": 7,
+      "kind": "adv",
+      "true": 9,
+      "api_label": 4,
+      "api_flag": false,
+      "confidence": 0.9839,
+      "offline_label": 4,
+      "offline_flag": false
+    },
+    {
+      "idx": 8,
+      "kind": "clean",
+      "true": 5,
+      "api_label": 5,
+      "api_flag": false,
+      "confidence": 0.9337,
+      "offline_label": 5,
+      "offline_flag": false
+    },
+    {
+      "idx": 8,
+      "kind": "adv",
+      "true": 5,
+      "api_label": 6,
+      "api_flag": true,
+      "confidence": 0.9976,
+      "offline_label": 6,
+      "offline_flag": true
+    },
+    {
+      "idx": 9,
+      "kind": "clean",
+      "true": 9,
+      "api_label": 9,
+      "api_flag": false,
+      "confidence": 0.9935,
+      "offline_label": 9,
+      "offline_flag": false
+    },
+    {
+      "idx": 9,
+      "kind": "adv",
+      "true": 9,
+      "api_label": 7,
+      "api_flag": true,
+      "confidence": 0.9911,
+      "offline_label": 7,
+      "offline_flag": true
+    },
+    {
+      "idx": 10,
+      "kind": "clean",
+      "true": 0,
+      "api_label": 0,
+      "api_flag": false,
+      "confidence": 0.9999,
+      "offline_label": 0,
+      "offline_flag": false
+    },
+    {
+      "idx": 10,
+      "kind": "adv",
+      "true": 0,
+      "api_label": 5,
+      "api_flag": true,
+      "confidence": 0.931,
+      "offline_label": 5,
+      "offline_flag": true
+    }
+  ]
+}
